@@ -1,0 +1,43 @@
+Scenario Elf created at 2015-11-10 22:05:38 UTC
+Statistic 16 created at 2015-11-10 23:51:30 UTC
+
+Bash Histories: 
+ 
+2015-11-10 23:06:03 +0000
+## ubuntu
+apt-get -y update
+sudo su
+
+## instructor
+#1447193620
+ls -a
+#1447193625
+echo "hello"
+#1447193630
+cat "pizza"
+#1447193634
+asdfs
+#1447193638
+echo "Hmmm"
+#1447193644
+nmap localhost
+#1447193655
+cat /etc/bash.bashrc
+#1447193658
+ls
+#1447193673
+echo "leeeeps"
+#1447193680
+echo "renewwww"
+#1447193686
+echo $HOME
+#1447193688
+asdfs
+#1447195192
+ls
+
+## student
+ 
+Bash Analytics: 
+["instructor", {"447193620"=>"ls -a", "447193625"=>"echo \"hello\"", "447193630"=>"cat \"pizza\"", "447193634"=>"asdfs", "447193638"=>"echo \"Hmmm\"", "447193644"=>"nmap localhost", "447193655"=>"cat /etc/bash.bashrc", "447193658"=>"ls", "447193673"=>"echo \"leeeeps\"", "447193680"=>"echo \"renewwww\"", "447193686"=>"echo $HOME", "447193688"=>"asdfs", "447195192"=>"ls"}]
+["student", {}]

@@ -1,0 +1,46 @@
+Scenario Elf created at 2015-11-11 22:00:36 UTC
+Statistic 22 created at 2015-11-11 22:14:13 UTC
+
+Bash Histories: 
+ 
+2015-11-11 22:10:03 +0000
+## ubuntu
+apt-get -y update
+sudo su
+
+## instructor
+#1447279486
+ls -a
+#1447279489
+cat .script.log 
+#1447279492
+ls -l
+#1447279498
+ls -al
+#1447279500
+ll
+#1447279527
+echo "pizza pizza" >> .script.log 
+#1447279529
+sudo su
+#1447279574
+exit
+#1447279584
+sudo su
+#1447279626
+exit
+
+## student
+#1447279653
+ls -a
+#1447279655
+cat .script.log 
+#1447279657
+ls -la
+#1447279788
+exit
+
+ 
+Bash Analytics: 
+["instructor", {"447279486"=>"ls -a", "447279489"=>"cat .script.log ", "447279492"=>"ls -l", "447279498"=>"ls -al", "447279500"=>"ll", "447279527"=>"echo \"pizza pizza\" >> .script.log ", "447279529"=>"sudo su", "447279574"=>"exit", "447279584"=>"sudo su", "447279626"=>"exit"}]
+["student", {"447279653"=>"ls -a", "447279655"=>"cat .script.log ", "447279657"=>"ls -la", "447279788"=>"exit"}]

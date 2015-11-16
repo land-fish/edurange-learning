@@ -1,0 +1,43 @@
+Scenario Elf created at 2015-10-29 23:40:05 UTC
+Statistic 14 created at 2015-10-30 23:52:53 UTC
+
+Bash Histories: 
+ 
+2015-10-30 23:50:03 +0000
+## ubuntu
+apt-get -y update
+sudo su
+
+## instructor
+#1446248160
+ls -a
+#1446248164
+echo "hello"
+#1446248170
+echo "pizza"
+#1446248173
+hmm
+#1446248175
+asdf
+#1446248175
+asd
+#1446248185
+nmap localhost
+#1446248195
+nc localhost
+#1446248202
+nc
+#1446248209
+netcat
+#1446248772
+exit
+#1446248773
+ls
+#1446248835
+exit
+
+## student
+ 
+Bash Analytics: 
+["instructor", {"446248160"=>"ls -a", "446248164"=>"echo \"hello\"", "446248170"=>"echo \"pizza\"", "446248173"=>"hmm", "446248175"=>"asd", "446248185"=>"nmap localhost", "446248195"=>"nc localhost", "446248202"=>"nc", "446248209"=>"netcat", "446248772"=>"exit", "446248773"=>"ls", "446248835"=>"exit"}]
+["student", {}]

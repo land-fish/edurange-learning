@@ -1,0 +1,62 @@
+Scenario Strace created at 2015-11-11 23:10:54 UTC
+Statistic 23 created at 2015-11-11 23:25:38 UTC
+
+Bash Histories: 
+ 
+2015-11-11 23:20:03 +0000
+## ubuntu
+apt-get -y update
+sudo su
+
+## instructor
+#1447283890
+echo "test data"
+#1447283899
+cat .script.log 
+#1447283903
+pizza
+#1447283904
+asdffdsa
+#1447283910
+sudo apt-get install piza
+#1447283913
+figs
+#1447283916
+noooo
+#1447283922
+strace
+#1447283923
+ls
+#1447283927
+strace mystery 
+#1447283935
+exit
+
+## student
+#1447283816
+ls
+#1447283817
+ls -a
+#1447283819
+cat .script.log 
+#1447283829
+cat .profile 
+#1447283843
+ls .script.log 
+#1447283846
+which ls
+#1447283849
+which which
+#1447283856
+which which which
+#1447283861
+which which ls
+#1447283869
+ls -a
+#1447283871
+exit
+
+ 
+Bash Analytics: 
+["instructor", {"447283890"=>"echo \"test data\"", "447283899"=>"cat .script.log ", "447283903"=>"pizza", "447283904"=>"asdffdsa", "447283910"=>"sudo apt-get install piza", "447283913"=>"figs", "447283916"=>"noooo", "447283922"=>"strace", "447283923"=>"ls", "447283927"=>"strace mystery ", "447283935"=>"exit"}]
+["student", {"447283816"=>"ls", "447283817"=>"ls -a", "447283819"=>"cat .script.log ", "447283829"=>"cat .profile ", "447283843"=>"ls .script.log ", "447283846"=>"which ls", "447283849"=>"which which", "447283856"=>"which which which", "447283861"=>"which which ls", "447283869"=>"ls -a", "447283871"=>"exit"}]

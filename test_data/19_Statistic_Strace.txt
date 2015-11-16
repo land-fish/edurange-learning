@@ -1,0 +1,72 @@
+Scenario Strace created at 2015-11-11 02:02:44 UTC
+Statistic 19 created at 2015-11-11 02:38:22 UTC
+
+Bash Histories: 
+ 
+2015-11-11 02:34:03 +0000
+## ubuntu
+apt-get -y update
+sudo su
+
+## instructor
+#1447208957
+ls
+#1447208966
+ls | grep pizza
+#1447208970
+ls | grep tiger
+#1447208972
+cat tiger.txt 
+#1447208978
+strace tiger.txt 
+#1447208984
+strace ls
+#1447208990
+strace grep tiger.txt 
+#1447208996
+ls
+#1447208999
+echo "pizzaaa"
+#1447209003
+cat whyyyy
+#1447209008
+cat strace-identify 
+#1447209018
+strace strace idet
+#1447209025
+exit
+
+## student
+#1447208802
+ls
+#1447208809
+ls -a
+#1447208813
+aaay
+#1447208813
+ls
+#1447208814
+sl
+#1447208815
+sls
+#1447208819
+nmap localhost
+#1447208850
+sdfasdfafafaf
+#1447208851
+af
+#1447208852
+slls
+#1447208919
+echo
+#1447208934
+exit
+#1447208936
+ls
+#1447208937
+exit
+
+ 
+Bash Analytics: 
+["instructor", {"447208957"=>"ls", "447208966"=>"ls | grep pizza", "447208970"=>"ls | grep tiger", "447208972"=>"cat tiger.txt ", "447208978"=>"strace tiger.txt ", "447208984"=>"strace ls", "447208990"=>"strace grep tiger.txt ", "447208996"=>"ls", "447208999"=>"echo \"pizzaaa\"", "447209003"=>"cat whyyyy", "447209008"=>"cat strace-identify ", "447209018"=>"strace strace idet", "447209025"=>"exit"}]
+["student", {"447208802"=>"ls", "447208809"=>"ls -a", "447208813"=>"ls", "447208814"=>"sl", "447208815"=>"sls", "447208819"=>"nmap localhost", "447208850"=>"sdfasdfafafaf", "447208851"=>"af", "447208852"=>"slls", "447208919"=>"echo", "447208934"=>"exit", "447208936"=>"ls", "447208937"=>"exit"}]

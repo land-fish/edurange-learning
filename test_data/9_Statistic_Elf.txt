@@ -1,0 +1,51 @@
+Scenario Elf created at 2015-10-28 23:12:45 UTC
+Statistic 9 created at 2015-10-28 23:27:50 UTC
+
+Bash Histories: 
+ 
+2015-10-28 23:22:03 +0000
+## ubuntu
+apt-get -y update
+sudo su
+
+## instructor
+#1446074381
+Dls
+#1446074382
+ls
+#1446074383
+ls -a
+#1446074393
+echo "hello"
+#1446074402
+cat .exit_status 
+#1446074412
+asdfs
+#1446074412
+asd
+#1446074415
+echo "pizza"
+#1446074416
+ls
+#1446074423
+echo "cats"
+#1446074424
+ls
+#1446074425
+ls -a
+#1446074429
+cat .exit_status 
+#1446074438
+ls
+#1446074442
+sudo su
+#1446074498
+ls -a
+#1446074499
+ls
+
+## student
+ 
+Bash Analytics: 
+["instructor", {"446074381"=>"Dls", "446074382"=>"ls", "446074383"=>"ls -a", "446074393"=>"echo \"hello\"", "446074402"=>"cat .exit_status ", "446074412"=>"asd", "446074415"=>"echo \"pizza\"", "446074416"=>"ls", "446074423"=>"echo \"cats\"", "446074424"=>"ls", "446074425"=>"ls -a", "446074429"=>"cat .exit_status ", "446074438"=>"ls", "446074442"=>"sudo su", "446074498"=>"ls -a", "446074499"=>"ls"}]
+["student", {}]

@@ -1,0 +1,44 @@
+Scenario Strace created at 2015-11-11 00:34:44 UTC
+Statistic 17 created at 2015-11-11 00:57:09 UTC
+
+Bash Histories: 
+ 
+2015-11-11 00:54:02 +0000
+## ubuntu
+apt-get -y update
+sudo su
+
+## instructor
+#1447202885
+ls -a
+#1447202888
+echo as;ldjfdsa
+#1447202891
+pizza
+#1447202894
+cowsay "hello"
+#1447202896
+damn
+#1447202898
+meanfig
+#1447202900
+meanfigs
+#1447202905
+nmap
+#1447202909
+fuck
+#1447202912
+Meeeple
+#1447202921
+cat "thingy"
+
+## student
+#1447202813
+ls -a
+#1447202821
+echo "pizza"
+
+ 
+Bash Analytics: 
+["instructor", {"447202885"=>"ls -a", "447202888"=>"echo as;ldjfdsa", "447202891"=>"pizza", "447202894"=>"cowsay \"hello\"", "447202896"=>"damn", "447202898"=>"meanfig", "447202900"=>"meanfigs", "447202905"=>"nmap", "447202909"=>"fuck", "447202912"=>"Meeeple", "447202921"=>"cat \"thingy\""}]
+["student", {"447202813"=>"ls -a", "447202821"=>"echo \"pizza\""}]
