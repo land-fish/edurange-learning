@@ -1,0 +1,3 @@
+digraph G { 
+sudo -> ls -> cat -> ls -> ls -> sudo -> sudo -> ls -> cat -> ls
+ } 
