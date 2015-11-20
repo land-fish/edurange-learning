@@ -1,4 +1,13 @@
 #!/usr/bin/python
+# This is a script for processing the bash history files from EDURange
+# The input for this script is a bash history file, or a list of bash
+# history files.
+# The script provides functions for sorting through the histories.
+# It will have multiple configuration options. Among the possible
+# outputs, there are
+# - A dict of commands used and their frequency
+# - A list of valid commands and their arguments (a list of lists,
+#   where the first element is the command the rest are its arguments
 
 import re
 
@@ -64,6 +73,15 @@ def count_bash_commands(command_list):
     for i in command_list:
         command_count[i] = command_count.get(i,0) + 1
     return command_count
+
+# Takes a dict of commands and their frequency
+# Out puts a simple ascii graph
+def graph(command_frequency):
+    graph_str = ""
+    for com_name in command_frequency:
+        graph_str += com_name + ":" + (10 - len(com_name)) * " " + command_frequency.get(com_name) * '*' + "\n"
+    return graph_str
+    
     
     
 
@@ -76,13 +94,23 @@ if __name__ == '__main__':
     list_of_commands = find_just_commands(bash_lines,commands)
 
     list_of_lines = find_legit_lines(bash_lines,commands)
+    print "List of bash commands: "
     print list_of_lines
+    print " "
 
     
     final_count = count_bash_commands(list_of_commands)
     
     analytics = find_commands_and_args(bash_lines,commands)
-
-    print analytics
     
-    #print final_count
+    print "List of lists: commands and thier arguments"
+    for a_list in analytics:
+        print a_list
+    print " "
+    
+    print "Count of commands used: "
+    for counts in final_count:
+        print counts + ": " + str(final_count.get(counts))
+
+    print "\nCool chart of commands used:"
+    print graph(final_count)
