@@ -1,18 +1,14 @@
 #!/usr/bin/python
 # This is a script for processing the bash history files from EDURange
-# The input for this script is a bash history file, or a list of bash
-# history files.
-# The script provides functions for sorting through the histories.
-# It will have multiple configuration options. Among the possible
-# outputs, there are
-# - A dict of commands used and their frequency
-# - A list of valid commands and their arguments (a list of lists,
-#   where the first element is the command the rest are its arguments
+# Use the script like this:
+#    ./process_bash_histories /path/to/bash_history_file
+
 
 import re
+import sys
 
-# reads through a list where values are separated by line breaks
-# returns an array of strings
+# reads through a file where values are separated by line breaks
+# returns a list of strings
 def load_command_list(file_path):
     f = open(file_path)
     command_list = []
@@ -33,6 +29,26 @@ def remove_analytics(input_list):
         if i <= analytics_pos - 1:
             output_list.append(line)
     return output_list
+
+# Takes a list of bash history lines without analytics
+# Out puts a dict of lists. The first string in each list
+# will be the user, and the all other lines will be bash
+# History commands
+def sort_by_user(input_list):
+    usr_dct = {}
+    #var to manage user in loop
+    cur_usr = ""
+    for line in input_list:
+        if line[:2] == "##":
+            if usr_dct.has_key('%s' % line[3:]):
+                cur_usr = '%s' % line[3:] 
+            else:
+                usr_dct['%s' % line[3:]] = []
+                cur_usr = '%s' % line[3:]
+        else:
+            if cur_usr is not "":
+                usr_dct.get(cur_usr).append(line)
+    return usr_dct 
 
 # Takes a list of bash history lines and a list of linux commands
 # Outputs a list of commands
@@ -72,45 +88,57 @@ def count_bash_commands(command_list):
     command_count = {}
     for i in command_list:
         command_count[i] = command_count.get(i,0) + 1
+    
     return command_count
 
 # Takes a dict of commands and their frequency
-# Out puts a simple ascii graph
+# Out puts a simple ascii graph by frequency
 def graph(command_frequency):
-    graph_str = ""
-    for com_name in command_frequency:
+    graph_str = "" 
+    for com_name,com_count in sorted(command_frequency.iteritems(), key=lambda (k,v): (v,k)):
         graph_str += com_name + ":" + (10 - len(com_name)) * " " + command_frequency.get(com_name) * '*' + "\n"
     return graph_str
-    
-    
-    
+  
+# Takes the file path, and returns a list of bash history lines without
+# the weird analytics stuff
+def load(hist_file_path):
+    input_file = hist_file_path
+    bash_commands = load_command_list(input_file)
+    bash_lines = remove_analytics(bash_commands)
+    return bash_lines
 
 if __name__ == '__main__':
-    commands = load_command_list('combined_bin_list')
-    #print commands
 
-    bash_commands = load_command_list('test_data/14_Statistic_Elf.txt')
-    bash_lines = remove_analytics(bash_commands)
-    list_of_commands = find_just_commands(bash_lines,commands)
+    #The file 'combined_bin_list' must exist in the same directory as this script
+    hist_file_path = str(sys.argv[1])
+    bash_lines = load(hist_file_path)   
+    
+    #make a dictionary of 
+    user_dict = sort_by_user(bash_lines)
+  
+    for i in user_dict.iterkeys():
+        print "Bash history for user: %s" % i
+        for a in user_dict.get(i):
+            print a
+    
 
+    commands = load_command_list('combined_bin_list') 
+    list_of_commands = find_just_commands(bash_lines,commands) 
+    final_count = count_bash_commands(list_of_commands)  
+    print graph(final_count)
+   #This script is a work in progress, please ignore the content below
+    """
     list_of_lines = find_legit_lines(bash_lines,commands)
     print "List of bash commands: "
     print list_of_lines
-    print " "
-
-    
-    final_count = count_bash_commands(list_of_commands)
-    
-    analytics = find_commands_and_args(bash_lines,commands)
-    
+    print " " 
+    analytics = find_commands_and_args(bash_lines,commands) 
     print "List of lists: commands and thier arguments"
     for a_list in analytics:
         print a_list
-    print " "
-    
+    print " " 
     print "Count of commands used: "
     for counts in final_count:
         print counts + ": " + str(final_count.get(counts))
-
     print "\nCool chart of commands used:"
-    print graph(final_count)
+    """
