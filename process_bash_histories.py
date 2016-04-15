@@ -42,7 +42,7 @@ def sort_by_user(input_list):
     #var to manage user in loop
     cur_usr = ""
     for line in input_list:
-        if line[:2] == "##":
+        if line[:3] == "## ":
             if usr_dct.has_key('%s' % line[3:]):
                 cur_usr = '%s' % line[3:] 
             else:
